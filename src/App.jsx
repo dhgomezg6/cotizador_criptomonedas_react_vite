@@ -45,7 +45,7 @@ const Heading = styled.h1`
 
 
 function App() {
-
+  
   const [ monedas, setMonedas ] = useState({})
   const [ resultado, setResultado ] = useState({})
   const [ cargando, setCargando ] = useState(false)
@@ -59,7 +59,6 @@ function App() {
         const { moneda, criptomoneda } = monedas
         const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`
         
-        console.log(url)
         const respuesta = await fetch(url);
         const _resultado = await respuesta.json();
         setResultado(_resultado.DISPLAY[criptomoneda][moneda])
